@@ -1,9 +1,16 @@
 const express = require('express')
 const app = express()
 
+const connectToDatabase = require('./database');
+
+connectToDatabase();
+
 
 app.get("/", (req, res) =>{
-    res.send("Hello world")
+    res.json({
+        "name" : "Manish Basnet",
+        "age" : 22
+    })
 })
 
 app.listen(3000, () =>{
